@@ -1,3 +1,8 @@
+---
+layout: post
+title: On Macbook Pros
+---
+
 Lately, I've been observing people on the commuter train, and one particular type of person that I see are people (mostly men... I don't think I've ever seen a lady in this category in the past close to 2 months) sporting their corporate issued Macbook Pro laptops. Some of them are typing away at their code editors, others are filling in weekly reports, etc.
 
 It's interesting how about the only people with Macbook Pros that I see look like they're using the corporate laptop. I don't see a lot of people who seem to be using their personal privately bought Macbook Pros (although, admittedly, I think I've seen a few people with Macbook Airs and other type of older white Macbooks). A few people who I know had Macbook Pros that they had bought by themselves took care of it as if the laptops were more valuable (or needed more care than, at least) a newborn baby. You know the drill: super padded bag case, another zipped case where the laptop is directly put inside, and a cloth covering the keyboard that is perfectly cut to the size of the screen that (I think) it's meant to protect.
