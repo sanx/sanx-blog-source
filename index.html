@@ -1,3 +1,6 @@
+---
+title: index.html
+---
 <!DOCTYPE html>
 <html>
   <head>
@@ -14,7 +17,7 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <title>{{ page.title }} - {{ site.blog_name }}</title>
+    <title>{{ site.blog_name }}</title>
   </head>
 
   <body>
@@ -29,9 +32,31 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-            <h1>{{ page.title }}</h1>
-            <p class="post-date">({{ page.date | date_to_string }})</p>
-            {{ content }}
+            <!-- This loops through the paginated posts -->
+            {% for post in paginator.posts %}
+              <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+              <p class="author">
+                <p class="post-date">{{ post.date | date_to_string }}</p>
+              </p>
+              <div class="content">
+                {{ post.content }}
+              </div>
+            {% endfor %}
+
+            <!-- Pagination links -->
+            <div class="pagination">
+              {% if paginator.previous_page %}
+                <a href="/page{{ paginator.previous_page }}" class="previous">Previous</a>
+              {% else %}
+                <span class="previous">Previous</span>
+              {% endif %}
+              <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+              {% if paginator.next_page %}
+                <a href="/page{{ paginator.next_page }}" class="next">Next</a>
+              {% else %}
+                <span class="next ">Next</span>
+              {% endif %}
+            </div>
         </section>
 
         <aside id="sidebar">
@@ -41,5 +66,7 @@
         </aside>
       </div>
     </div>
+
+  
   </body>
 </html>

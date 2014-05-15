@@ -1,0 +1,7 @@
+.post-date, .pagination {
+    font-style: italic;
+}
+
+.pagination {
+    font-size: 150%;
+}
