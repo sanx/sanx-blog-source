@@ -12,15 +12,21 @@ Furthermore, say we got this script from someone else, and we're too lazy to cod
 
 The following doesn't work, because our user can't write a new file to the `/etc/apache2/available-sites/` directory:
 
+{% highlight sh linenos %}
     generate_apache_config DOMAIN_NAME WEBROOT > /etc/apache2/available-sites/DOMAIN_NAME.conf
     #doesn't work because our regular user can't create a file under that directory
+{% endhighlight %}
 
 One may think that executing the whole thing as sudo may make this work, but it won't, because only command `generate_apache_config` is invoked as sudo. `tee` is still invoked as our user:
 
+{% highlight sh linenos %}
     sudo generate_apache_config DOMAIN_NAME WEBROOT > /etc/apache2/available-sites/DOMAIN_NAME.conf
     #doesn't work because redirecting to output file is done as regular user
+{% endhighlight %}
 
 Use the `tee` command instead. Only the `tee` command is invoked with sudo:
 
+{% highlight sh linenos %}
     generate_apache_config DOMAIN_NAME WEBROOT | sudo tee /etc/apache2/available-sites/DOMAIN_NAME.conf
     #works! we invoke our script with regular user privileges, and then redirect to tee, which we invoke as a super user with sudo
+{% endhighlight %}

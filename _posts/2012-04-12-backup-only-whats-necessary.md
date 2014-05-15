@@ -7,6 +7,7 @@ When backing up a home directory, you don't want to backup subversion checkout s
 
 I made a script which will help you find directories corresponding to svn checkouts that are up-to date relative to their repositories. I saved it as `~/bin/get_up_to_date_svn_dirs.pl`:
 
+{% highlight perl linenos %}
     #!/usr/bin/perl -w
     
     my @input_list = ();
@@ -54,15 +55,20 @@ I made a script which will help you find directories corresponding to svn checko
         my $path_b = $2;
         return $path_a cmp $path_b;
     }
+{% endhighlight %}
 
 
 First, I run `du`, and `sort` it numerically to get an idea of how big the home directory that I want to back up is, and save the output to file `user-du.txt` under my own home directory:
 
+{% highlight perl linenos %}
     du ~user/ | sort -n | tee ~/user-du.txt
+{% endhighlight %}
 
 Now, I'll feed this `du` output to my script, which will generate a list of paths in the input file that correspond to svn checkout directories that are up to date relative to their repositories. I save this list in file `~/tmp/user-all-clean.txt`:
 
+{% highlight perl linenos %}
     cat ~/user-du.txt | ~/bin/get_up_to_date_svn_dirs.pl | tee ~/tmp/user-all-clean.txt
+{% endhighlight %}
 
 At this point, I know:
 
@@ -71,6 +77,8 @@ At this point, I know:
 
 I can use `tar`, using the `--exclude-from` option to finally backup what I want in gzipped tarball file `~/user-home.tgz`
 
+{% highlight perl linenos %}
     tar --exclude-from ~/tmp/user-all-clean.txt -zcvf ~/user-home.tgz ~user/
+{% endhighlight %}
 
 @TODO (exercise for the reader): Have `~/bin/get_up_to_date_svn_dirs.pl` output the svn _repository paths_ and _revision numbers_ that we're skipping to get the full information that would allow us to restore the backup precisely by restoring not only the tarball but also checking out the right _paths_ and _revisions_ from subversion.
