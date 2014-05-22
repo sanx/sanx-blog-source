@@ -1,3 +1,4 @@
 paginate: 5
 blog_name: "Gerardo Moad's blog"
 blog_tagline: "A software guy's ideas and findings scratchpad..."
+markdown: kramdown
