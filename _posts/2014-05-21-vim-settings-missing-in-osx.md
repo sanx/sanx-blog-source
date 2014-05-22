@@ -8,7 +8,7 @@ there are a few default settings that an *Ubuntu* install of `vim` has that
 were missing in *OSX* (Mavericks). Here are the few that I've added to my
 `~/.vimrc` so far that I've found useful:
 
-    ruler
+    set ruler
     filetype plugin indent on
     syntax on
 
