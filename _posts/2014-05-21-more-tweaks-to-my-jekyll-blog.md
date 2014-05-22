@@ -10,7 +10,7 @@ by doing the following:
     guide page on pagination][1].
 2.  I added RSS support by adapting one of [the templates I found here][2].
 
-#1 on my **TODO** list is a good commenting model that's compatible with Jekyll's
+No. 1 on my **TODO** list is a good commenting model that's compatible with Jekyll's
 static site generation.
 
   [1]: http://jekyllrb.com/docs/pagination/
