@@ -43,6 +43,15 @@ start `postfix` in case it is not running already: `sudo /etc/init.d/postfix sta
 1   Make sure that port 25 (SMTP) is open on your server's ACL/firewall!
 1   Done!
 
+Troubleshooting
+----
+
+Pretty much anything that might have gone wrong with your `postfix` configuration
+will be logged to either one of these upon `start` or `reload` or the package:
+
+    /var/log/mail.err
+    /var/log/mail.log
+
 Conclusion
 ----
 
