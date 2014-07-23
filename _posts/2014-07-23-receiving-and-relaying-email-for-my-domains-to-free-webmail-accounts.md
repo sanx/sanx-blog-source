@@ -23,25 +23,25 @@ Server distribution version 14.04 LTS.
 Steps
 ----
 
-1   `sudo apt-get install postfix`
-1   Choose "Internet site" option on menu prompt and enter settings that make
+1.  `sudo apt-get install postfix`
+1.  Choose "Internet site" option on menu prompt and enter settings that make
 sense. We'll do the rest of the configuration manually.
-1   Put this at the end of your `/etc/postfix/main.cf` file:
+1.  Put this at the end of your `/etc/postfix/main.cf` file:
         ## added by me
         virtual_alias_domains = yourfirstdomain.com, yourseconddomain.com
         virtual_alias_maps = hash:/etc/postfix/virtual
         inet_protocols = all
-1   Create file `/etc/postfix/virtual` and add lines to it like the following:
+1.  Create file `/etc/postfix/virtual` and add lines to it like the following:
         name@yourfirstdomain.com        name@freewebmailprovider.com
         name@yourseconddomain.com       name@freewebmailprovider.com
 ... this will cause any main for name@yourfirstdomain.com and 
 name@yourseconddomain.com to be forwarded to name@freewebmailprovider.com
-1   Make sure you generate the "hash" or ".db" file for `virtual` by doing:
+1.  Make sure you generate the "hash" or ".db" file for `virtual` by doing:
 `sudo postmap hash:/etc/postfix/virtual`
-1   Reload `postfix` config with `sudo /etc/init.d/postfix reload`, or
+1.  Reload `postfix` config with `sudo /etc/init.d/postfix reload`, or
 start `postfix` in case it is not running already: `sudo /etc/init.d/postfix start`
-1   Make sure that port 25 (SMTP) is open on your server's ACL/firewall!
-1   Done!
+1.  Make sure that port 25 (SMTP) is open on your server's ACL/firewall!
+1.  Done!
 
 Troubleshooting
 ----

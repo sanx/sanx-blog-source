@@ -1,5 +1,4 @@
-Reconfiguring an installed package in Ubuntu, Debian, and other Ubuntu based
-distributions.
+Reconfiguring an installed package in Ubuntu, Debian, and other Ubuntu based distributions.
 ====
 
 It's happened to me several times that I `apt-get install` some packages which
