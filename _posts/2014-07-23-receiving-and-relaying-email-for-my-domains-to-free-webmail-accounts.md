@@ -37,9 +37,8 @@ sense. We'll do the rest of the configuration manually.
 
         name@yourfirstdomain.com        name@freewebmailprovider.com
         name@yourseconddomain.com       name@freewebmailprovider.com
-
-... this will cause any main for name@yourfirstdomain.com and 
-name@yourseconddomain.com to be forwarded to name@freewebmailprovider.com
+... this will cause any mail for `name@yourfirstdomain.com` and 
+`name@yourseconddomain.com` to be forwarded to `name@freewebmailprovider.com`
 1.  Make sure you generate the "hash" or ".db" file for `virtual` by doing:
 `sudo postmap hash:/etc/postfix/virtual`
 1.  Reload `postfix` config with `sudo /etc/init.d/postfix reload`, or
