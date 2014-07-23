@@ -27,13 +27,17 @@ Steps
 1.  Choose "Internet site" option on menu prompt and enter settings that make
 sense. We'll do the rest of the configuration manually.
 1.  Put this at the end of your `/etc/postfix/main.cf` file:
+
         ## added by me
         virtual_alias_domains = yourfirstdomain.com, yourseconddomain.com
         virtual_alias_maps = hash:/etc/postfix/virtual
         inet_protocols = all
+
 1.  Create file `/etc/postfix/virtual` and add lines to it like the following:
+
         name@yourfirstdomain.com        name@freewebmailprovider.com
         name@yourseconddomain.com       name@freewebmailprovider.com
+
 ... this will cause any main for name@yourfirstdomain.com and 
 name@yourseconddomain.com to be forwarded to name@freewebmailprovider.com
 1.  Make sure you generate the "hash" or ".db" file for `virtual` by doing:
