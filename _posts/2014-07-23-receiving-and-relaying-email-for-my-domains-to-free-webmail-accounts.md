@@ -23,6 +23,15 @@ Server distribution version 14.04 LTS.
 Steps
 ----
 
+1.  create a new MX record with the following information (how you enter this
+into your DNS provider's interface should be easy to figure out):
+
+        host name: yourdomain.com
+        type: MX
+        ttl: default
+        priority: 10 (Normal)
+        data: yourdomain.com
+
 1.  `sudo apt-get install postfix`
 1.  Choose "Internet site" option on menu prompt and enter settings that make
 sense. We'll do the rest of the configuration manually.
