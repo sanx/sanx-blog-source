@@ -59,7 +59,7 @@ Troubleshooting
 ----
 
 Pretty much anything that might have gone wrong with your `postfix` configuration
-will be logged to either one of these upon `start` or `reload` or the package:
+will be logged to either one of these upon the package's `start` or `reload`:
 
     /var/log/mail.err
     /var/log/mail.log
@@ -67,7 +67,7 @@ will be logged to either one of these upon `start` or `reload` or the package:
 Conclusion
 ----
 
-This comes very handy for leveraging your ability to support multiple email
+This comes in very handy for leveraging your ability to support multiple email
 addresses on the domains that you control while letting you not worry about
 setting up an actual client, and using existing free webmail accounts for
 receiving your email.

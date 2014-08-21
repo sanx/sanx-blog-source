@@ -1,4 +1,4 @@
-Safely "daemonizing" a `NodeJS` server in Ubuntu
+Safely *daemonizing* a NodeJS server in Ubuntu
 ====
 
 We don't want to run the NodeJS service as root just to be able to bind to
