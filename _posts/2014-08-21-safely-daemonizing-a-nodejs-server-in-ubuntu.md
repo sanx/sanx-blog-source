@@ -25,6 +25,7 @@ before you installed package `iptables-persistent`, go ahead and tweak them to y
 liking, and then run the following commands to save them:
 
 `sudo iptables-save > /etc/iptables/rules.v4`
+
 `sudo ip6tables-save > /etc/iptables/rules.v6`
 
 That's it! `iptables-persistent` is a service that should load `/etc/iptables/rules.v{4,6}`
