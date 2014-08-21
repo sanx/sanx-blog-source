@@ -8,6 +8,7 @@ Use `iptables` to forward requests coming in on port 80 over to port 3000
 ----
 
 `sudo iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 3000`
+
 `sudo ip6tables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 3000`
 
 ... this will work until you restart the server.
