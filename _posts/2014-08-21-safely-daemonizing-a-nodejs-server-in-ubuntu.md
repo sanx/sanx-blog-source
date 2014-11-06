@@ -1,3 +1,7 @@
+---
+template: post.html
+title: Safely daemonizing a NodeJS server in Ubuntu
+---
 Safely *daemonizing* a NodeJS server in Ubuntu
 ====
 

@@ -1,3 +1,7 @@
+---
+title: Reconfiguring an installed package in Ubuntu, Debian, and other Ubuntu based distributions.
+---
+
 Reconfiguring an installed package in Ubuntu, Debian, and other Ubuntu based distributions.
 ====
 

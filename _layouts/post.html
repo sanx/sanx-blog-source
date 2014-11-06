@@ -5,40 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="alternate" type="application/atom+xml" href="/feed.xml">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="{{ site.url }}/stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="{{ site.url }}/stylesheets/overrides.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="{{ site.url }}/stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="{{ site.url }}/stylesheets/print.css" media="print" />
+    <!-- link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css' -->
+    <!-- link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen" / -->
+    <!-- link rel="stylesheet" type="text/css" href="/stylesheets/overrides.css" media="screen" / -->
+    <!-- link rel="stylesheet" type="text/css" href="/stylesheets/pygment_trac.css" media="screen" / -->
+    <!-- link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print" / -->
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <title>{{ page.title }} - {{ site.blog_name }}</title>
+    <title>{{ title }} - {{ site.title }}</title>
   </head>
 
   <body>
     <header>
-      <div class="inner">
-        <h1>{{ site.blog_name }}</h1>
-        <h2>{{ site.blog_tagline }}</h2>
-        <a href="https://github.com/sanx" class="button"><small>Follow me on</small>GitHub</a>
-      </div>
+        {% include "header.html" %}
     </header>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-            <h1>{{ page.title }}</h1>
-            <p class="post-date">({{ page.date | date_to_string }})</p>
-            {{ content }}
-        </section>
+    <main>
+      <section class="post">
+        <article>
+            <h2><a href="/{{ path }}/index.html">{{ title }}</a></h1>
+            <p class="post-date">({{ date | date('Y-m-d') }})</p>
+            <div>
+                {{ contents.toString() }}
+            </div>
+        </article>
 
         <aside id="sidebar">
 
+        {% include "footer.html" %}
 
-          {% include footer.html %}
         </aside>
       </div>
     </div>

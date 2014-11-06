@@ -1,5 +1,5 @@
 ---
-layout: post
+template: post.html
 title: Vim settings missing in OSX
 ---
 

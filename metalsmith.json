@@ -1,0 +1,29 @@
+{
+  "source": "./_posts",
+  "destination": "./_site",
+  "metadata": {
+    "site": {
+        "blog_name": "My Jekyll-Powered Blog",
+        "blog_tagline": "My second, super-cool, Jekyll-powered blog."
+    }
+  },
+  "plugins": {
+    "metalsmith-date-in-filename": {"override": true},
+    "metalsmith-drafts": {},
+    "metalsmith-markdown": {},
+    "metalsmith-collections": {
+      "posts": {
+        "pattern": "flslfjdf*.md",
+        "sortBy": "date",
+        "reverse": true
+      }
+    },
+    "metalsmith-permalinks": {
+      "pattern": ":title"
+    },
+    "metalsmith-templates": {
+      "engine": "swig",
+      "directory": "_layouts"
+    }
+  }
+}
