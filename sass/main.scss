@@ -105,8 +105,9 @@ body {
                     background-color: initial;
                 }
                 background-color: rgba(256, 256, 256, 0.1);
-                white-space: pre;
+                //white-space: pre;
                 text-align: center;
+                line-height: 1.2em;
                 @include span(1 of 1);
                 > dt {
                     &:after {
@@ -114,20 +115,16 @@ body {
                     }
                     @include breakpoint($large-screen) {
                         @include span(1 at 1 of (1 3));
-                        display: block;
                         clear: both;
                     }
-                    display: inline;
                 }
                 > dd {
                     @include breakpoint($large-screen) {
                         @include span(1 at 2 of (1 3) last);
-                        display: block;
                         &:after {
                             content: "";
                         }
                     }
-                    display: inline;
                     &:after {
                         content: "\A";
                     }
@@ -137,12 +134,21 @@ body {
     }
     > main, > footer {
         h1, h2, h3, h4, h5, p, ul, li, div {
-            margin: 1em 10px;
+            @include breakpoint($large-screen) {
+                margin: 1em 10px;
+            }
+            margin: 0.5em 4px;
             line-height: 1.3em;
         }
         article > h2 {
             font-size: 1.5em!important;
         } 
+        > ul.posts, > ul.posts li {
+            @include breakpoint($large-screen) {
+                margin: 1em 10px;
+            }
+            margin: 0.5em 0;
+        }
     }
     > main {
         @include breakpoint($large-screen) {
@@ -157,6 +163,8 @@ body {
         }
         @include span(1 of 1);
         margin-top: gutter();
+        font-size: 80%;
+        z-index: -1;
     }
 }
 
