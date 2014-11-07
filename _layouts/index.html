@@ -45,12 +45,12 @@
         <ul class="pagination">
             {% if pagination.prev.pagePosts %}
             <li class="newer">
-                <a href="{{ pagination.prev.fileName }}">Newer</a>
+                <a href="{{ pagination.prev.fileName }}#main-start">Newer</a>
             </li>
             {% endif %}
             {% if pagination.next.pagePosts %}
             <li class="older">
-                <a href="{{ pagination.next.fileName }}">Older</a>
+                <a href="{{ pagination.next.fileName }}#main-start">Older</a>
             </li>
             {% endif %}
         </ul>
