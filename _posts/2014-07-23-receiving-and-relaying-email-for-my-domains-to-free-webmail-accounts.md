@@ -2,9 +2,6 @@
 title: Receiving and relaying email for my domains over to free webmail accounts.
 ---
 
-Receiving and relaying email for my domains over to free webmail accounts.
-====
-
 Goal
 ----
 

@@ -4,7 +4,9 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="alternate" type="application/atom+xml" href="/feed.xml">
+    <link rel="alternate" type="application/atom+xml" href="/rss.xml">
+    <link href='/css/main.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/highlight-js.default.min.css">
     <!-- link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css' -->
     <!-- link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen" / -->
     <!-- link rel="stylesheet" type="text/css" href="/stylesheets/overrides.css" media="screen" / -->
@@ -30,7 +32,7 @@
                 <li>
                     <section class="post">
                         <article>
-                            <h2><a href="/{{ post.path }}/index.html">{{ post.title }}</a></h2>
+                            <h2><a href="/{{ post.path }}/index.html#main-start">{{ post.title }}</a></h2>
                             <div>
                                 {{ post.rawHtml.toString() }}
                             </div>
@@ -40,19 +42,19 @@
             {% endfor %}
         </ul>
 
+        <ul class="pagination">
+            {% if pagination.prev.pagePosts %}
+            <li>
+                <a href="{{ pagination.prev.fileName }}">Prev</a>
+            </li>
+            {% endif %}
+            {% if pagination.next.pagePosts %}
+            <li>
+                <a href="{{ pagination.next.fileName }}">Next</a>
+            </li>
+            {% endif %}
+        </ul>
     </main>
-    <ul class="pagination">
-        {% if pagination.prev.pagePosts %}
-        <li>
-            <a href="{{ pagination.prev.fileName }}">Prev</a>
-        </li>
-        {% endif %}
-        {% if pagination.next.pagePosts %}
-        <li>
-            <a href="{{ pagination.next.fileName }}">Next</a>
-        </li>
-        {% endif %}
-    </ul>
 
     <footer>
 

@@ -7,25 +7,24 @@ var permalinks = require('metalsmith-permalinks');
 var templates = require('metalsmith-templates');
 var paginate = require('metalsmith-paginate');
 var feed = require('metalsmith-feed');
+var metallic = require('metalsmith-metallic');
 var _ = require('lodash');
 var util = require('util');
 
 Metalsmith(__dirname)
     .source('./_posts')
     .destination('./_site')
+    .use(metallic())
     .use(dateInFilename(true))
     .use(collections({
         posts: {
-            pattern: '!index.md',
+            pattern: '????-??-??-*.md',
             sortBy: 'date',
             reverse: true
         }
     }))
     .use(function (files, metalsmith, done) {
         _.forEach(files, function (fileMeta, fileName) {
-            if (fileName.match(/^\./) || !fileName.match(/.md$/)) {
-                delete files[fileName];
-            }
             console.log("file: " + fileName);
         });
         console.log('hier');
@@ -36,7 +35,7 @@ Metalsmith(__dirname)
         metadata.site = {
             url: 'http://www.gerardomoad.com/',
             title: "Gerardo's musings",
-            tagline: "(not) just another blog",
+            tagline: "(not) just another blog, hopefully, this time around",
             author: "Gerardo Moad"
         };
 

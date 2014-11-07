@@ -10,9 +10,9 @@ I remembered that I would need to use `bundle` to launch my Jekyll instance
 in order for it to work the same way as it does on the hosted Github Pages, so I
 ran:
 
-{% highlight sh linenos %}
+```bash
     sudo gem install bundle
-{% endhighlight %}
+```
 
 output:
 
@@ -31,9 +31,9 @@ as Borat would say: "nice! I like!". I like, indeed!
 I also remembered that for everything that the hosted Github Pages does
 to work locally, I had to install the `git-pages` *gem*. I tried doing so:
 
-{% highlight sh linenos %}
+```bash
     sudo gem install github-pages
-{% endhighlight %}
+```
 
 output:
 
