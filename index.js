@@ -54,7 +54,8 @@ Metalsmith(__dirname)
     }))
     .use(markdown())
     .use(permalinks({
-        pattern: "special/:title",
+        pattern: "posts/:title",
+        relative: false
         //collection: "posts"
     }))
     .use(function (files, metalsmith, done) {

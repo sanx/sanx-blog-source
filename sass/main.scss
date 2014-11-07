@@ -4,7 +4,7 @@
 @import "compass/reset";
 
 $large-screen: 960px;
-$header-bg-color: #2D882D;
+$header-bg-color: #26596A;
 $blog-title-h1-height: 70px;
 
 a {
@@ -18,38 +18,49 @@ body {
     font-family: "Trebuchet MS", "Tahoma", "Verdana", "Georgia";
     @include breakpoint($large-screen) {
         max-width: $large-screen;
-    }
         overflow-x: hidden;
+    }
 
     > header a {
-        color: #414141;
+        color: #A1A1A1;
     }
     > header {
-        color: #222;
+        color: #C1C1C1;
         background-color: $header-bg-color;
-        background-image: url('../img/backgrounds/pajarito_picando_playa_halfmoonbay.JPG');
-        background-position: center;
-        margin-left: -600px;
-        margin-right: -600px;
-        height: 600px;
+        @include breakpoint($large-screen) {
+            background-image: url('../img/backgrounds/pajarito_picando_playa_halfmoonbay.JPG');
+            background-position: center;
+            margin-left: -600px;
+            margin-right: -600px;
+            height: 600px;
+        }
         //@include span(1 of 1);
         @include clearfix();
         > div {
-            max-width: $large-screen;
-            padding-left: 50%;
-            padding-right: 25%;
-            margin-left: -$large-screen/2;
-            background-color: rgba(0, 0, 0, 0.08);
+            @include breakpoint($large-screen) {
+                max-width: $large-screen;
+                padding-left: 50%;
+                padding-right: 25%;
+                margin-left: -$large-screen/2;
+                background-color: rgba(0, 0, 0, 0.08);
+            }
             @include clearfix();
             //@include span(1 of 1);
             > h1, > h2 {
-                @include span(1 at 1 of (1.3 1) 0.05);
+                @include breakpoint($large-screen) {
+                    @include span(1 at 1 of (1.3 1) 0.05);
+                }
+                @include span(1 of 1);
             }
             > h1 {
                 $title-font-size: 0.8*$blog-title-h1-height;
                 $title-leeway: 0.2*$blog-title-h1-height;
-                height: $blog-title-h1-height;
-                line-height: $blog-title-h1-height;
+                @include breakpoint($large-screen) {
+                    height: $blog-title-h1-height;
+                    line-height: 1em;
+                    text-align: left;
+                }
+                text-align: center;
                 font-size: $title-font-size;
                 vertical-align: middle;
                 &::before {
@@ -67,22 +78,59 @@ body {
                     margin-bottom: $title-leeway*3/4;
                     vertical-align: middle;
                 }
+                a {
+                    @include breakpoint($large-screen) {
+                        display: inline;
+                    }
+                    display: block;
+                }
             }
             > h2 {
-                line-height: 30px;
+                line-height: 1.1em;
+                @include breakpoint($large-screen) {
+                    text-align:left;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+                margin-top: 1em;
+                margin-bottom: 1em;
+                text-align:center;
             }
             > dl {
-                @include span(1 at 2 of (1.3 1) 0.05 last);
-                margin-top: -$blog-title-h1-height;
+                @include breakpoint($large-screen) {
+                    @include span(1 at 2 of (1.3 1) 0.05 last);
+                    margin-top: -$blog-title-h1-height;
+                    white-space: normal;
+                    text-align: left;
+                    background-color: none;
+                }
+                background-color: rgba(256, 256, 256, 0.1);
+                white-space: pre;
+                text-align: center;
+                @include span(1 of 1);
                 > dt {
-                    @include span(1 at 1 of (1 3));
                     &:after {
                         content: ":";
                     }
-                    clear: both;
+                    @include breakpoint($large-screen) {
+                        @include span(1 at 1 of (1 3));
+                        display: block;
+                        clear: both;
+                    }
+                    display: inline;
                 }
                 > dd {
-                    @include span(1 at 2 of (1 3) last);
+                    @include breakpoint($large-screen) {
+                        @include span(1 at 2 of (1 3) last);
+                        display: block;
+                        &:after {
+                            content: "";
+                        }
+                    }
+                    display: inline;
+                    &:after {
+                        content: "\A";
+                    }
                 }
             }
         }
@@ -97,11 +145,17 @@ body {
         } 
     }
     > main {
-        @include span(1 at 1 of (3 1));
+        @include breakpoint($large-screen) {
+            @include span(1 at 1 of (3 1));
+        }
+        @include span(1 of 1);
         margin-top: gutter();
     }
     > footer {
-        @include span(1 at 2 of (3 1) last);
+        @include breakpoint($large-screen) {
+            @include span(1 at 2 of (3 1) last);
+        }
+        @include span(1 of 1);
         margin-top: gutter();
     }
 }
@@ -116,9 +170,11 @@ ul.posts > li {
 
 section.post {
     h1 {
+        font-weight: bold;
         font-size: 1.5em;
     }
     h2 {
+        font-weight: bold;
         font-size: 1.2em;
     }
     ul {
@@ -130,9 +186,11 @@ section.post {
 }
 
 .hljs, pre > code {
-    margin-left: -600px;
-    margin-right: -600px;
-    padding-left: 600px!important;
+    @include breakpoint($large-screen) {
+        margin-left: -600px;
+        margin-right: -600px;
+        padding-left: 600px!important;
+    }
 }
 code {
     font-family: courier, monospace
@@ -140,4 +198,8 @@ code {
 pre > code {
     display: block;
     background: none repeat scroll 0% 0% #F0F0F0;
+    @include breakpoint($large-screen) {
+        overflow-x: visible;
+    }
+    overflow-x: scroll;
 }
