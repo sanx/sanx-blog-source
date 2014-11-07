@@ -193,6 +193,26 @@ section.post {
     }
 }
 
+ul.pagination {
+    @include span(1 of 1);
+    li {
+        margin: 0;
+        text-align: center;
+    }
+    li.newer a {
+        @include span(1 of 2);
+        &::before {
+            content: "« « ";
+        }
+    }
+    li.older a {
+        @include span(1 of 2 last);
+        &::after {
+            content: " » »";
+        }
+    }
+}
+
 .hljs, pre > code {
     @include breakpoint($large-screen) {
         margin-left: -600px;
