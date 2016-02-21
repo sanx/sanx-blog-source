@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+- '0.11'
+- '0.10'
+before_install:
+- openssl aes-256-cbc -K $encrypted_57703ae61a7e_key -iv $encrypted_57703ae61a7e_iv
+  -in sanx.github.io.travis.enc -out sanx.github.io.travis -d
+deploy:
+  provider: script
+  script: bin/sanx.github.io-deploy.sh
+  on:
+    branch: master
