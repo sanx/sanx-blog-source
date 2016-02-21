@@ -8,6 +8,8 @@ before_install:
 - chmod u=rw,og= ~/.ssh/sanx.github.io.travis
 - echo "Host github.com" >> ~/.ssh/config
 - echo "IdentityFile ~/.ssh/sanx.github.io.travis" >> ~/.ssh/config
+- git config --global user.email "gerardo@gerardomoad.com"
+- git config --global user.name "Gerardo Moad"
 deploy:
   provider: script
   script: bin/sanx.github.io-deploy.sh
