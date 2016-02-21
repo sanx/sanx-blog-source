@@ -1,3 +1,6 @@
+Deploying my Github Pages hosted personal blog from the comfort of `git push`
+====
+
 I'm setting up Travis to automatically deploy my Metalsmith-generated blog files.
 
 *   My blog sources (Markdown and Metalsmith scripts to pregenerate html) repo are at:
