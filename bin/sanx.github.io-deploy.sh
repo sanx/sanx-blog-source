@@ -3,7 +3,7 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 SOURCE_REPO_DIR=`dirname $DIR`
 
-#npm install
+npm install
 node index.js
 
 rm -rf sanx.github.io || { echo "failed to rm checkout dir"; exit 1; }
