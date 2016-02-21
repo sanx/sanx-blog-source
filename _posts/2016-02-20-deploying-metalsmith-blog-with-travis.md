@@ -1,4 +1,4 @@
-Deploying my Github Pages hosted personal blog from the comfort of `git push`
+Deploying my Metalsmith-generated, Github-Pages-hosted personal blog from the comfort of `git push`
 ====
 
 I'm setting up Travis to automatically deploy my Metalsmith-generated blog files.
