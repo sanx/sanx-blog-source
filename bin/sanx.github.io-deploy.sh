@@ -15,6 +15,7 @@ cd sanx.github.io || { echo "failed to cd to checkout dir"; exit 1; }
 git clone git@github.com:sanx/sanx.github.io.git . || { echo "failed to clone generated blog repo"; exit 1; }
 
 cp -r ../_site/* .
+git add .
 git commit -m "auto commit at: `date`" -a
 git push
 
