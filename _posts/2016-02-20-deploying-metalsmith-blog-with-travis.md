@@ -2,7 +2,7 @@
 title: Deploying my Metalsmith-generated, Github-Pages-hosted personal blog from the comfort of `git push`
 ---
 
-I'm setting up Travis to automatically deploy my Metalsmith-generated blog files.
+I'm setting up [Travis](https://travis-ci.org) to automatically deploy my Metalsmith-generated blog files.
 
 *   My blog sources (Markdown and Metalsmith scripts to pregenerate html) repo are at:
     [sanx/sanx-blog-source](https://github.com/sanx/sanx-blog-source) (master branch)
