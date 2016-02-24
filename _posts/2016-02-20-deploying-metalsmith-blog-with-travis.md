@@ -24,8 +24,9 @@ Next steps (setup travis build and store encrypted deploy ssh keys) are based on
 *   Check that `travis -v` is `1.7.0` or later.
 *   `travis init` (since I didn't have a `.travis.yml` already)
 *   `travis login`
-*   `travis encrypt-file sanx.github.io.travis --add` will generate `travis encrypt-file sanx.github.io.travis.enc`
-    and modify `.travis.yml` to make the encryption key available to our build.
+*   `travis encrypt-file sanx.github.io.travis --add` will generate file `sanx.github.io.travis.enc`
+    and it will also modify your `.travis.yml` file to make the encryption key available to our build when
+    it runs on one of the Travis build servers.
 
 Add this to `.travis.yml`:
 
